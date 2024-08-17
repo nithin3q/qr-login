@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        .background-blockchain {
+            background-color: #0a0a0a;
+            background-image: 
+                linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1) 100%),
+                linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1) 100%);
+            background-size: 50px 50px;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        .background-blockchain::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            mix-blend-mode: overlay;
+            z-index: 1;
+            pointer-events: none;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        #radius-shape-1, #radius-shape-2 {
+            position: absolute;
+            background: radial-gradient(#00bfae, #004d40);
+            opacity: 0.6;
+        }
+
+        #radius-shape-1 {
+            height: 220px;
+            width: 220px;
+            top: -60px;
+            left: -130px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        #radius-shape-2 {
+            border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+            bottom: -60px;
+            right: -110px;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.1) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+            color: #ffffff;
+        }
+
+        .form-outline input,
+        .form-outline label {
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            background-color: #3f3f3f;
+            border-color: #3f3f3f;
+        }
+
+        .btn-primary:hover {
+            background-color: #2c2c2c;
+            border-color: #2c2c2c;
+        }
+
+        .btn-link {
+            color: #3f3f3f;
+        }
+
+        .btn-link:hover {
+            color: #2c2c2c;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        #qr-reader {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .padding-1 {
+            padding: 22px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 991.98px) {
+            #radius-shape-1 {
+                height: 150px;
+                width: 150px;
+                top: -40px;
+                left: -100px;
+            }
+
+            #radius-shape-2 {
+                width: 200px;
+                height: 200px;
+                bottom: -40px;
+                right: -80px;
+            }
+
+            .col-lg-6 h1 {
+                font-size: 2.5rem;
+            }
+
+            .card-body {
+                padding: 1.5rem;
+            }
+
+            .img-fluid {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .col-lg-6 {
+                text-align: center;
+            }
+
+            .col-lg-6 h1 {
+                font-size: 2rem;
+                margin-top: 1.5rem;
+            }
+
+            .img-fluid {
+                margin-bottom: 1.5rem;
+            }
+
+            .padding-1 {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            #radius-shape-1 {
+                height: 120px;
+                width: 120px;
+                top: -30px;
+                left: -80px;
+            }
+
+            #radius-shape-2 {
+                width: 150px;
+                height: 150px;
+                bottom: -30px;
+                right: -60px;
+            }
+
+            .col-lg-6 h1 {
+                font-size: 1.75rem;
+            }
+
+            .card-body {
+                padding: 1rem;
+            }
+
+            .img-fluid {
+                max-width: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="background-blockchain overflow-hidden">
+        <div class="container px-4 padding-1 px-md-5 text-center text-lg-start my-5">
+            <div class="row gx-lg-5 align-items-center mb-5">
+                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                    <div class="col-md-6 col-lg-5 d-md-block">
+                        <img src="./assets/img/logo.png" alt="logo" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                    </div>
+                    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                        The best offer <br />
+                        <span style="color: hsl(218, 81%, 75%)">for your business</span>
+                    </h1>
+                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Temporibus, expedita iusto veniam atque, magni tempora mollitia
+                        dolorum consequatur nulla, neque debitis eos reprehenderit quasi
+                        ab ipsum nisi dolorem modi. Quos?
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                    <div class="card bg-glass">
+                        <div class="card-body px-4 py-5 px-md-5 text-center">
+                            <h3>Scan QR to Login</h3>
+                            <img src="https://hexdocs.pm/qr_code/2.1.1/docs/qrcode.svg" alt="QR Code" class="img-fluid" style="max-width: 200px; margin-bottom: 20px;">
+                            <p>Ensure your QR code is visible to the scanner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
